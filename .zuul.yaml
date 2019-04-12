@@ -1,0 +1,9 @@
+- jobs:
+    name: build-python-tarball
+    run: playbooks/build-python-tarball/run.yaml
+    nodeset: fedora-latest-1vcpu
+
+- project:
+    check:
+      jobs:
+        - build-python-tarball

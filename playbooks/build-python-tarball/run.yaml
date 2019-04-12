@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+    - name: Run build-python-release role
+      include_role:
+        name: build-python-release

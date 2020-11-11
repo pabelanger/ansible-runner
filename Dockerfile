@@ -1,6 +1,6 @@
 ARG BASE_IMAGE=docker.io/fedora:32
 
-FROM ${BASE_IMAGE}
+FROM ${BASE_IMAGE} as ansible-runner
 
 # Install system packages for use in all images
 RUN dnf install -y \

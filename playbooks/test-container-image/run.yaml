@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: Setup use-buildset-registry role
+      include_role:
+        name: use-buildset-registry

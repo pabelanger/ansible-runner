@@ -3,7 +3,8 @@
     name: ansible-runner-build-container-image
     parent: ansible-build-container-image
     description: Build ansible-runner container image
-    pre-run: playbooks/ansible-runner-build-container-image/pre.yaml
+    required-projects:
+      - github.com/ansible/ansible
     timeout: 2700
     provides: ansible-runner-container-image
     vars: &ansible_runner_image_vars
@@ -11,6 +12,8 @@
         - context: .
           registry: quay.io
           repository: quay.io/ansible/ansible-runner
+          siblings:
+            - github.com/ansible/ansible
           tags:
             # If zuul.tag is defined: [ '3', '3.19', '3.19.0' ].  Only works for 3-component tags.
             # Otherwise: ['latest']
